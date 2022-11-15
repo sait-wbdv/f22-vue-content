@@ -22,7 +22,7 @@ const textColor = (str) => {
       </h1>
     </header>
     <section
-      class="mx-8 mb-12 max-w-fit rounded-lg bg-slate-100 p-4 shadow-sm shadow-slate-900 lg:shadow-lg"
+      class="container mx-8 mb-12 max-w-xl rounded-lg bg-slate-100 p-4 shadow-sm shadow-slate-900 lg:shadow-lg"
     >
       <header class="my-4">
         <h2 class="text-2xl font-semibold text-slate-900 lg:text-5xl">
@@ -36,7 +36,7 @@ const textColor = (str) => {
           strCapitalize(), and the text color is defined using a ternary
           operatory in the paragraph tag's class binding
         </p>
-        <div>
+        <div class="my-4">
           <p :class="textColor(name)" class="pb-2 text-xl lg:text-3xl">
             {{ name }}
           </p>
@@ -47,7 +47,7 @@ const textColor = (str) => {
             {{ strCapitalize(name) }}
           </p>
         </div>
-        <p class="text-sm text-slate-700">
+        <p class="max-w-prose text-sm text-slate-700">
           <em
             >By taking the reused ternary logic from the two paragraph tags to
             determine color and making them a function, the template code is
