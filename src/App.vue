@@ -14,7 +14,7 @@ import { RouterLink, RouterView } from "vue-router";
         width="64"
         height="64"
       />
-      <p class="text-3xl font-bold text-slate-700">Lilyx</p>
+      <p class="text-3xl font-bold text-slate-700">Sait WebDev</p>
     </div>
     <nav>
       <ul class="flex gap-4">
@@ -35,6 +35,6 @@ import { RouterLink, RouterView } from "vue-router";
   <RouterView />
 
   <footer class="grid h-20 place-items-center bg-slate-700 text-white">
-    <p>&copy; 2022 Ashlyn Knox</p>
+    <p>&copy; 2022 SAIT Web Developers</p>
   </footer>
 </template>
