@@ -1,0 +1,16 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "extends": ["plugin:vue/vue3-essential", "eslint:recommended", "prettier"],
+  "rules": {
+    "vue/script-setup-no-uses-vars": "off",
+    "vue/require-default-prop": "off"
+  }
+}

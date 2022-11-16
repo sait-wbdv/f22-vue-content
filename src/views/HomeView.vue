@@ -1,3 +1,4 @@
+
 <script setup>
 import AppCard from "../components/AppCard.vue";
 import AppButton from "../components/AppButton.vue";
