@@ -12,6 +12,11 @@ function strCapitalize(str) {
 function textColor(str) {
   return str[0] != str[0].toUpperCase() ? "text-red-500" : "text-green-500";
 }
+// JS Variable for youtube
+const youtube = {
+  src: "src/assets/images/youtube.svg",
+  alt: "Youtube Logo",
+};
 </script>
 
 <template>
@@ -24,9 +29,19 @@ function textColor(str) {
       </h1>
     </header>
     <section class="flex justify-around">
-      <AppButton text="Push me" bgColor="bg-blue-500" />
-      <AppButton text="High Five" bgColor="bg-red-500" />
-      <AppButton text="Low Five" bgColor="bg-emerald-500" />
+      <AppButton
+        text="Push me"
+        bgColor="bg-blue-500"
+        src="src/assets/images/logo.svg"
+      />
+      <AppButton
+        text="High Five"
+        bgColor="bg-red-500"
+        num="5"
+        :src="youtube.src"
+        :altText="youtube.alt"
+      />
+      <AppButton text="Low Five" bgColor="bg-emerald-500" altText="Nothing" />
     </section>
     <section>
       <AppCard />

@@ -5,14 +5,18 @@ defineProps({
     type: String,
     default: "bg-purple-500",
   },
-
-  colors: {
-    type: Array,
+  src: {
+    type: String,
+  },
+  altText: String,
+  num: {
+    type: Number,
+    default: 3,
   },
 });
 </script>
 <template>
   <button :class="bgColor" class="m-2 rounded-md px-4 py-2 text-white">
-    {{ text }}
+    <img :src="src" :alt="altText" />{{ text }} {{ num }}
   </button>
 </template>
