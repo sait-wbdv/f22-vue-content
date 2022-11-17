@@ -1,5 +1,12 @@
+<script setup>
+import AppHeader from "../components/AppHeader.vue";
+const pageInfo = {
+  title: "Our About Page",
+  description: "Learn about our cool website",
+};
+</script>
 <template>
   <main>
-    <h1>This is an about page</h1>
+    <AppHeader :title="pageInfo.title" />
   </main>
 </template>

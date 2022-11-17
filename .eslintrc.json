@@ -10,7 +10,8 @@
   },
   "extends": ["plugin:vue/vue3-essential", "eslint:recommended", "prettier"],
   "rules": {
-    "vue/script-setup-no-uses-vars": "off",
-    "vue/require-default-prop": "off"
+    "vue/no-unused-vars": 0,
+    "vue/script-setup-no-uses-vars": 0,
+    "vue/require-default-prop": 0
   }
 }
