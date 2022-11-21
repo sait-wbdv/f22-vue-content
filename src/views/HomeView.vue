@@ -28,7 +28,31 @@ const buttons = [
     bgColor: "bg-emerald-500",
   },
 ];
-const arr = ["one", "two", "three", "four"];
+const arr = [
+  {
+    id: 1,
+    img: {
+      src: "src/assets/images/youtube.svg",
+      alt: "Image",
+    },
+    text: "Thing one",
+  },
+  {
+    id: 2,
+    src: "src/assets/images/youtube.svg",
+    text: "Thing Two",
+  },
+  {
+    id: 3,
+    src: "src/assets/images/youtube.svg",
+    text: "Thing Three",
+  },
+  {
+    id: 4,
+    src: "src/assets/images/youtube.svg",
+    text: "Thing Three",
+  },
+];
 </script>
 
 <template>
@@ -38,7 +62,7 @@ const arr = ["one", "two", "three", "four"];
       :description="info.description"
     >
     </AppHeader>
-    <section class="flex justify-around">
+    <section class="my-12 flex justify-around">
       <AppButton
         v-for="thing in buttons"
         :key="thing.id"
@@ -49,14 +73,24 @@ const arr = ["one", "two", "three", "four"];
     <section>
       <AppCard />
     </section>
-    <section>
+    <section class="my-12 flex justify-center">
       <ul>
         <!-- Attach v-for loop to the item that will be duplicated-->
         <li
           v-for="item in arr"
           :key="item.id"
         >
-          {{ item }}
+          <p>{{ item.id }}</p>
+          <img
+            :src="item.img.src"
+            :alt="item.img.alt"
+            class="w-12"
+            v-if="item.img"
+          />
+          <img
+            :src="item.src"
+            v-else
+          />
         </li>
       </ul>
     </section>
