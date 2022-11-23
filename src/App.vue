@@ -1,5 +1,17 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
+import AppList from "./components/AppList.vue";
+import AppLink from "./components/AppLink.vue";
+const links = [
+  {
+    url: "https://github.com",
+    text: "Github",
+  },
+  {
+    url: "https://gitlab.com",
+    text: "Gitlab",
+  },
+];
 </script>
 
 <template>
@@ -19,12 +31,16 @@ import { RouterLink, RouterView } from "vue-router";
     <nav>
       <ul class="flex gap-4">
         <li>
-          <RouterLink to="/" class="text-xl font-semibold text-slate-50"
+          <RouterLink
+            to="/"
+            class="text-xl font-semibold text-slate-50"
             >Home</RouterLink
           >
         </li>
         <li>
-          <RouterLink to="/about" class="text-xl font-semibold text-slate-50"
+          <RouterLink
+            to="/about"
+            class="text-xl font-semibold text-slate-50"
             >About</RouterLink
           >
         </li>
@@ -35,6 +51,14 @@ import { RouterLink, RouterView } from "vue-router";
   <RouterView />
 
   <footer class="grid h-20 place-items-center bg-slate-700 text-white">
+    <AppList>
+      <li
+        v-for="link in links"
+        :key="link.id"
+      >
+        <AppLink :url="link.url">{{ link.text }}</AppLink>
+      </li>
+    </AppList>
     <p>&copy; 2022 SAIT Web Developers</p>
   </footer>
 </template>

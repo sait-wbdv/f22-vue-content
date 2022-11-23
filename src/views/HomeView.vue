@@ -1,98 +1,33 @@
 <script setup>
-import AppCard from "../components/AppCard.vue";
-import AppButton from "../components/AppButton.vue";
-import AppHeader from "../components/AppHeader.vue";
-// JS Variable for youtube
-const info = {
-  label: "Welcome to the Home Page",
-  description:
-    "This website is for documenting the things that we learn to do in VueJS.",
-};
-// const youtube = {
-//   src: "src/assets/images/youtube.svg",
-//   alt: "Youtube Logo",
-// };
-const buttons = [
-  {
-    text: "Push Me",
-    bgColor: "bg-blue-500",
-    src: "src/assets/images/logo.svg",
-  },
-  {
-    text: "High Five",
-    bgColor: "bg-red-500",
-    src: "src/assets/images/youtube.svg",
-  },
-  {
-    text: "Low FIve",
-    bgColor: "bg-emerald-500",
-  },
-];
-const arr = [
-  {
-    id: 1,
-    img: {
-      src: "src/assets/images/youtube.svg",
-      alt: "Image",
-    },
-    text: "Thing one",
-  },
-  {
-    id: 2,
-    src: "src/assets/images/youtube.svg",
-    text: "Thing Two",
-  },
-  {
-    id: 3,
-    src: "src/assets/images/youtube.svg",
-    text: "Thing Three",
-  },
-  {
-    id: 4,
-    src: "src/assets/images/youtube.svg",
-    text: "Thing Three",
-  },
+// Import Component
+import AppList from "../components/AppList.vue";
+import AppListItem from "../components/AppListItemKv.vue";
+import AppLink from "../components/AppLink.vue";
+// Page (or API) stores the information that goes into the list
+const arr = [1, 2, 3, 4];
+const lyrics = [
+  { i: "Hello ", x: "By the Beatles" },
+  { i: "Goodbye ", x: "Don't Sue me for Copyright" },
+  { i: "You Say ", x: "Neato" },
+  { i: "I Say ", x: "Goodbye" },
 ];
 </script>
-
 <template>
   <main>
-    <AppHeader
-      :title="info.label"
-      :description="info.description"
-    >
-    </AppHeader>
-    <section class="my-12 flex justify-around">
-      <AppButton
-        v-for="thing in buttons"
-        :key="thing.id"
-        :text="thing.text"
-        :bgColor="thing.bgColor"
+    <AppLink url="https://github.com">Github</AppLink>
+    <!-- Apply Component -->
+    <!-- Pass information to it-->
+    <AppList :list="arr" />
+    <!-- Pass array of objects to a component-->
+    <!-- Component iterates through objects -->
+    <!-- Render each key-value pair without them needing the same keys -->
+    <AppList>
+      <AppListItem
+        v-for="lyric in lyrics"
+        :key="lyric.id"
+        :keyItem="lyric.i"
+        :valueItem="lyric.x"
       />
-    </section>
-    <section>
-      <AppCard />
-    </section>
-    <section class="my-12 flex justify-center">
-      <ul>
-        <!-- Attach v-for loop to the item that will be duplicated-->
-        <li
-          v-for="item in arr"
-          :key="item.id"
-        >
-          <p>{{ item.id }}</p>
-          <img
-            :src="item.img.src"
-            :alt="item.img.alt"
-            class="w-12"
-            v-if="item.img"
-          />
-          <img
-            :src="item.src"
-            v-else
-          />
-        </li>
-      </ul>
-    </section>
+    </AppList>
   </main>
 </template>
