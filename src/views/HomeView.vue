@@ -1,7 +1,7 @@
 <script setup>
 // Import Component
 import AppList from "../components/AppList.vue";
-import AppListItem from "../components/AppListItemKv.vue";
+import AppListItem from "../components/AppListItem.vue";
 import AppLink from "../components/AppLink.vue";
 // Page (or API) stores the information that goes into the list
 const arr = [1, 2, 3, 4];
@@ -15,12 +15,7 @@ const lyrics = [
 <template>
   <main>
     <AppLink url="https://github.com">Github</AppLink>
-    <!-- Apply Component -->
-    <!-- Pass information to it-->
     <AppList :list="arr" />
-    <!-- Pass array of objects to a component-->
-    <!-- Component iterates through objects -->
-    <!-- Render each key-value pair without them needing the same keys -->
     <AppList>
       <AppListItem
         v-for="lyric in lyrics"

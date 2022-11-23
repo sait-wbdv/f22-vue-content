@@ -6,23 +6,22 @@ defineProps({
 });
 </script>
 <template>
-  <div
-    class="container my-4 mx-4 max-w-lg md:mx-12"
-    v-if="list != ''"
-  >
+  <div class="container my-4 mx-4 max-w-lg md:mx-12">
+    <!-- Use this if an array is passed-->
     <ul
-      v-if="list"
+      v-if="list != ''"
       class="p-4"
     >
-      <!-- list item component: handles the styles of each list item -->
+      <!-- A simple flat array would render easily here-->
       <li
         v-for="listItem in list"
         :key="listItem.id"
+        class="max-w-prose py-2"
       >
         {{ listItem }}
       </li>
     </ul>
-    <!-- if no list is passed, use this component like a generic html component-->
+    <!-- Otherwise use this and manually controll content in a slot -->
     <ul
       v-else
       class="p-4"
